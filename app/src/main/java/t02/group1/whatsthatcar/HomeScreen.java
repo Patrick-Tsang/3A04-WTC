@@ -10,4 +10,16 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
     }
+
+    public void beginSearch(){
+
+    }
+
+    public void getHelp(){
+
+    }
+
+    public void viewHistory(){
+
+    }
 }
