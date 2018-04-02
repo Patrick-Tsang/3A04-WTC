@@ -25,6 +25,9 @@ public class ExpertController3 implements ExpertControllerInterface{
 
     public List<Integer> getResults(){
         return searchResults;
+    }
+
+    public void updateSpec(String newInfo) {
 
     }
 }

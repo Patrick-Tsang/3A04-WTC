@@ -27,4 +27,7 @@ public class ExpertController2 implements ExpertControllerInterface{
         return searchResults;
 
     }
+    public void updateSpec(String newInfo) {
+
+    }
 }

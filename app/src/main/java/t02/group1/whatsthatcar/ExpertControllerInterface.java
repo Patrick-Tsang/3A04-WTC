@@ -6,4 +6,5 @@ import java.util.List;
 public interface ExpertControllerInterface {
     void startSearch();
     List<Integer> getResults();
+    void updateSpec(String newInfo);
 }

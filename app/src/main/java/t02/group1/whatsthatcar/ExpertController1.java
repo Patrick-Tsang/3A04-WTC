@@ -12,19 +12,23 @@ import java.util.Map;
 //This is the expert for vehicle manufacturer
 public class ExpertController1 implements ExpertControllerInterface{
 
-List<Integer> searchResults;
+    List<Integer> searchResults;
 
-public ExpertController1(){
-     searchResults = new ArrayList<>();
-}
+    public ExpertController1(){
+         searchResults = new ArrayList<>();
+    }
 
-public void startSearch(){
+    public void startSearch(){
 
 
-}
+    }
 
-public List<Integer> getResults(){
-    return searchResults;
+    public List<Integer> getResults(){
+        return searchResults;
 
-}
+    }
+
+    public void updateSpec(String newInfo) {
+
+    }
 }
