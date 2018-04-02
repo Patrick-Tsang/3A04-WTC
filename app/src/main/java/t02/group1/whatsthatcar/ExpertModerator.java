@@ -25,10 +25,23 @@ public class ExpertModerator {
     }
 
     //pass new information to the experts
-    private void updateExpert(int a, HashMap map){
-        for (ExpertControllerInterface expertCont : expertContList){
-
-        }
+    private void splitProblemSpec (HashMap<String, String> problemSpec){
+      for(String keyValue : problemSpec.keySet()){
+          switch (keyValue){
+              case  "make":
+                  updateExpert(problemSpec.get(keyValue), 1);
+                    break;
+              case "type":
+                  updateExpert(problemSpec.get(keyValue), 2);
+                  break;
+              case "doors":
+                  updateExpert(problemSpec.get(keyValue), 3);
+                  break;
+              case "size":
+                  updateExpert(problemSpec.get(keyValue), 4);
+              default:
+          }
+      }
     }
 
     //
@@ -98,9 +111,7 @@ public class ExpertModerator {
     }
 
 
-    private HashMap splitProblemSet(int expertNumber){
-        HashMap toReturn = new HashMap();
-
-        return toReturn;
+    private void updateExpert(String newData, int expertNumber){
+        expertContList.get(expertNumber).updateSpec(newData);
     }
 }
