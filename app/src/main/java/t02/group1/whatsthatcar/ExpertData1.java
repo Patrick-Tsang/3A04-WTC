@@ -1,6 +1,7 @@
 package t02.group1.whatsthatcar;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,8 +20,8 @@ public class ExpertData1 {
 
 
 
-    public List<Map<String, String>> search(String search) {
-        List<Map<String, String>> result = new ArrayList<>();
+    public List<HashMap<String, String>> search(String search) {
+        List<HashMap<String, String>> result = new ArrayList<>();
         return result;
     }
 }

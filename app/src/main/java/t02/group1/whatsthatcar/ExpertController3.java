@@ -9,9 +9,10 @@ import java.util.Map;
  * Created by Patrick on 2018-04-02.
  */
 
-public class ExpertController3 {
+///This is the expert for vehicle size of car + number of doors
+public class ExpertController3 implements ExpertControllerInterface{
 
-    List<Map<String, String>> searchResults;
+    List<HashMap<String, String>> searchResults;
 
     public ExpertController3(){
         searchResults = new ArrayList<>();
@@ -22,7 +23,7 @@ public class ExpertController3 {
 
     }
 
-    public List<Map<String, String>> getResult(){
+    public List<HashMap<String, String>> getResults(){
         return searchResults;
 
     }
