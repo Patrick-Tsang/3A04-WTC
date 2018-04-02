@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface ExpertControllerInterface {
     void startSearch();
-    List<HashMap<String, String>> getResults();
+    List<Integer> getResults();
 }

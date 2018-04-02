@@ -12,7 +12,7 @@ import java.util.Map;
 //This is the expert for type of car (ala coupe)
 public class ExpertController2 implements ExpertControllerInterface{
 
-    List<HashMap<String, String>> searchResults;
+    List<Integer> searchResults;
 
     public ExpertController2(){
         searchResults = new ArrayList<>();
@@ -23,7 +23,7 @@ public class ExpertController2 implements ExpertControllerInterface{
 
     }
 
-    public List<HashMap<String, String>> getResults(){
+    public List<Integer> getResults(){
         return searchResults;
 
     }

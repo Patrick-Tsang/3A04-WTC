@@ -20,8 +20,8 @@ public class ExpertData1 {
 
 
 
-    public List<HashMap<String, String>> search(String search) {
-        List<HashMap<String, String>> result = new ArrayList<>();
-        return result;
+    public List<Integer> search(String search) {
+        List<Integer> results = new ArrayList<>();
+        return results;
     }
 }

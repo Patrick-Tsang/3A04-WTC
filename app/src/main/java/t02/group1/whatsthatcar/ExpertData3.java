@@ -19,8 +19,8 @@ public class ExpertData3 {
 
 
 
-    public List<Map<String, String>> search(String search) {
-        List<Map<String, String>> result = new ArrayList<>();
-        return result;
+    public List<Integer> search(String search) {
+        List<Integer> results = new ArrayList<>();
+        return results;
     }
 }
