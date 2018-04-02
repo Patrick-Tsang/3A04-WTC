@@ -5,4 +5,22 @@ package t02.group1.whatsthatcar;
  */
 
 public class HelpData {
+
+    public String getSearchHelp(){
+        String toReturn = "";
+
+        return toReturn;
+    }
+
+    public String getHistoryHelp(){
+        String toReturn = "";
+
+        return toReturn;
+    }
+
+    public String getGeneralHelp(){
+        String toReturn = "";
+
+        return toReturn;
+    }
 }
