@@ -5,4 +5,11 @@ package t02.group1.whatsthatcar;
  */
 
 public class HelpView {
+    public String displayHelp(){
+        return null;
+    }
+
+    public void closeHelp(){
+
+    }
 }
