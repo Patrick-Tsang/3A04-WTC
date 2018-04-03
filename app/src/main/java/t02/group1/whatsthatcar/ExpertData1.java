@@ -22,7 +22,7 @@ public class ExpertData1 {
     public List<Integer> search(String search) throws IOException {
 
         List<Integer> results = new ArrayList<>();
-        String file = "data.csv";
+        String file = "data1.csv";
         String line = "";
         List<String> data = new ArrayList<>();
         List<String> filteredData = new ArrayList<>();
