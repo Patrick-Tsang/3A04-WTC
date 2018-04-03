@@ -10,6 +10,9 @@ import java.util.*;
 
 public class UserInterfaceController {
 
+    public UserInterfaceController(SearchEngine searchEngine) {
+    }
+
     private List<HashMap> getDataRequest(){
 
         return null;

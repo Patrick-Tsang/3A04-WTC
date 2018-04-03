@@ -17,6 +17,12 @@ public class SearchEngine {
     Map<String, String> problemSpec = new HashMap<>();
     Map<Integer, Double>  guessList = new HashMap<>();
 
+    public SearchEngine(ExpertModerator expertMod){
+
+
+
+    }
+
     /**
      * @param problem This problem as defined by the user
      */
