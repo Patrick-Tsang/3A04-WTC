@@ -17,11 +17,6 @@ public class SearchEngine {
     Map<String, String> problemSpec = new HashMap<>();
     Map<Integer, Double>  guessList = new HashMap<>();
 
-
-    public void setProblem(HashMap problem) {
-        problemSpec = problem;
-    }
-
     public SearchEngine(ExpertModerator expertMod){
 
 
