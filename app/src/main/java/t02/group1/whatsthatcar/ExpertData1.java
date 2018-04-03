@@ -25,6 +25,7 @@ public class ExpertData1 {
         String file = "data.csv";
         String line = "";
         List<String> data = new ArrayList<>();
+        List<String> filteredData = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(file));
 
         while ((line = br.readLine()) != null) {
