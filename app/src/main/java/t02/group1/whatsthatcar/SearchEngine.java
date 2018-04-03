@@ -17,8 +17,8 @@ public class SearchEngine {
     Map<String, String> problemSpec = new HashMap<>();
     Map<Integer, Double>  guessList = new HashMap<>();
 
-    public void setProblem(HashMap problem) {
-       problemSpec = problem;
+    public void setProblem(HashMap problem){
+        problemSpec = problem;
     }
 
     public Map getProblem() {
@@ -26,14 +26,13 @@ public class SearchEngine {
     }
 
     public void setGuesses(Map<Integer, Double> guesses) {
-            guesses = guesses;
+        guesses = guesses;
     }
 
 
     public Map<Integer, Double> getGuesses(List<String> list) {
         return guessList;
     }
-
     private void updateModerator() {
 
     }
