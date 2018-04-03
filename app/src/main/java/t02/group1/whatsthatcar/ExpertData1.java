@@ -36,7 +36,7 @@ public class ExpertData1 {
 
         for (int i = 1; i < data.size(); i++) { // i start with 1 here to skip the headings
             if (data.get(i).equals(search)) {
-                results1.add(i); // the index of the row
+                results1.add(i+1); // the index of the row, +1 because in the file there is no row 0
             }
         }
 
