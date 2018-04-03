@@ -1,50 +1,66 @@
 package t02.group1.whatsthatcar;
 
-import java.lang.reflect.Array;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.Set;
 
 /**
- * Created by Patrick on 2018-04-02.
+ * This class performs the main logic of the system, formalising searches and
+ * combining the answers of the various experts. It is built so that experts could be easily added
+ * with only new keys requiring addition.
+ * @author Liam Macpherson
+ * @date 02/04/2018
  */
-
 public class ExpertModerator {
 
     public List<List<Integer>> expertsGuesslists = new ArrayList<>();
     private List<ExpertControllerInterface> expertContList = new ArrayList<>();
 
-    //Take in the expers and aadd them to a list of type interface
-    public ExpertModerator(ExpertControllerInterface expert1, ExpertControllerInterface expert2, ExpertControllerInterface expert3){
+    /**
+     * Add all the experts given to a list
+     * @param expert1 Expert 1
+     * @param expert2 Expert 2
+     * @param expert3 Expert 3
+     */
+    public ExpertModerator(ExpertControllerInterface expert1,
+                           ExpertControllerInterface expert2, ExpertControllerInterface expert3){
         expertContList.add(expert1);
         expertContList.add(expert2);
         expertContList.add(expert3);
     }
 
-    //pass new information to the experts
+    /**
+     * Add a new expert to the list of experts
+     * @param newExpert Expert to be added
+     */
+    public void addExpert(ExpertControllerInterface newExpert){
+        expertContList.add(newExpert);
+    }
+
+    /**
+     * This divides the problem up based on the key values
+     * @param problemSpec Problem spec mapping type of input to user input's value
+     */
     private void splitProblemSpec (HashMap<String, String> problemSpec){
       for(String keyValue : problemSpec.keySet()){
           switch (keyValue){
               case  "make":
                   updateExpert(problemSpec.get(keyValue), 1);
-                    break;
               case "type":
                   updateExpert(problemSpec.get(keyValue), 2);
-                  break;
-              case "doors":
+              case "doors_size":
                   updateExpert(problemSpec.get(keyValue), 3);
-                  break;
-              case "size":
-                  updateExpert(problemSpec.get(keyValue), 4);
               default:
           }
       }
     }
 
-    //
+    /**
+     * This combines all the guesses from the Expert controllers and assigns weights to them based
+     * on how many other experts agree with a particular expert controller's guess.
+     * @return The list of guesses (as IDs) with weights mapped to each
+     */
     private Map<Integer, Double> generateGuesses(){
         List<Integer> checkedItems= new ArrayList<>();
         Map<Integer, Double> guessesWithWeights= new HashMap<>();
@@ -106,11 +122,21 @@ public class ExpertModerator {
         return guessesWithWeights;
     }
 
+    /**
+     *
+     * @return Map of guesses to the weights
+     */
     public Map<Integer, Double> getGuesses(){
         return generateGuesses();
     }
 
 
+    /**
+     *
+     * @param newData The new data to be passed in
+     * @param expertNumber The expert controller's identification number specific to a particular
+     *                     domain
+     */
     private void updateExpert(String newData, int expertNumber){
         expertContList.get(expertNumber).updateSpec(newData);
     }
