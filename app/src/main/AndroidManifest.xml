@@ -18,7 +18,10 @@
         </activity>
         <activity android:name=".SearchView" />
         <activity android:name=".HistoryView" />
-        <activity android:name=".HelpView"></activity>
+        <activity android:name=".HelpView" />
+        <activity android:name=".SearchViewQ2" />
+        <activity android:name=".SearchViewQ3" />
+        <activity android:name=".SearchViewResult"></activity>
     </application>
 
 </manifest>

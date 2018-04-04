@@ -5,7 +5,6 @@ package t02.group1.whatsthatcar;
  * Created by Patrick on 2018-04-02.
  */
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -16,20 +15,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
 
 public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
-
-    static InputStream file1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        file1 = getResources().openRawResource(R.raw.data1);
-        System.out.println("file1" + file1);
     }
 
     public void showMenu(View v){
@@ -66,6 +59,7 @@ public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuIte
         return true;
     }
 
+
     Scanner input =  new Scanner(System.in);
 
     public View goToActivity(String act){
@@ -78,10 +72,6 @@ public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuIte
 
     public void saveInput(String in){
 
-    }
-
-    public static void main(String args[]) throws IOException {
-        ExpertData1.main(null);
     }
 }
 
