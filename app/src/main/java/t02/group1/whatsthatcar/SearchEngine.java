@@ -43,7 +43,7 @@ public class SearchEngine {
      *                guess
      */
     public void setGuesses(Map<Integer, Double> guesses) {
-            guessList = guesses;
+        guessList = guesses;
     }
 
     /**
@@ -60,6 +60,4 @@ public class SearchEngine {
     private void updateModerator() {
 
     }
-
-
 }
