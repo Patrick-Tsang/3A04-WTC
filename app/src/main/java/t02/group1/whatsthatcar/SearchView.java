@@ -5,13 +5,12 @@ package t02.group1.whatsthatcar;
  * Created by Patrick on 2018-04-02.
  */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.PopupMenu;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -28,7 +27,7 @@ public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuIte
     public void showMenu(View v){
         PopupMenu menu = new PopupMenu(this, v);
         menu.setOnMenuItemClickListener(this);
-        menu.inflate(R.menu.popup_menu);
+        menu.inflate(R.menu.popup_menu_1);
         menu.show();
     }
 
@@ -50,12 +49,13 @@ public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuIte
             default :
                 return false;
         }
-        TextView prompt = (TextView)findViewById(R.id.question1);
-        prompt.setVisibility(View.INVISIBLE);
-
-        Button answers = (Button)findViewById(R.id.answers1);
-        answers.setVisibility(View.INVISIBLE);
-
+//        TextView prompt = (TextView)findViewById(R.id.question1);
+//        prompt.setVisibility(View.INVISIBLE);
+//
+//        Button answers = (Button)findViewById(R.id.answers1);
+//        answers.setVisibility(View.INVISIBLE);
+        Intent toy = new Intent(SearchView.this, SearchViewQ2.class);
+        startActivity(toy);
         return true;
     }
 
