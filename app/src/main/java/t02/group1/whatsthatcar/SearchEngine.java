@@ -17,9 +17,10 @@ public class SearchEngine {
     Map<String, String> problemSpec = new HashMap<>();
     Map<Integer, Double>  guessList = new HashMap<>();
 
+    ExpertModerator em;
     public SearchEngine(ExpertModerator expertMod){
 
-
+        em = expertMod;
 
     }
 
@@ -57,7 +58,7 @@ public class SearchEngine {
     /**
      * Pass new information to the moderator to pass to the expert controllers.
      */
-    private void updateModerator() {
-
+    public void updateModerator() {
+        em.splitProblemSpec(problemSpec);
     }
 }
