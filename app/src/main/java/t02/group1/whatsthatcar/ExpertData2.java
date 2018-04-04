@@ -23,7 +23,7 @@ public class ExpertData2 {
     public static List<Integer> search(String search) throws IOException {
 
         List<Integer> results2 = new ArrayList<>();
-        String file = "data2.csv"; // file that contains only info of "type"
+        String file = "C:\\Users\\Liam\\Desktop\\Uni Stuff or work\\Uni\\International Study\\Fourth year\\Sem2\\3A04 - Large System Design\\Project\\WhatsThatCar\\3A04-WTC\\app\\src\\main\\res\\raw\\data2.csv"; // file that contains only info of "type"
         String line = "";
         List<String> data = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(file));

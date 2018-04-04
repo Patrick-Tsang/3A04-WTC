@@ -2,6 +2,7 @@ package t02.group1.whatsthatcar;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -15,8 +16,9 @@ public class ExpertController3 implements ExpertControllerInterface{
 
     // Defining class variables for searching and receiving data
     List<Integer> searchResults;
-    ExpertData1 expert = new ExpertData1();
-    String searchParams;
+    ExpertData3 expert = new ExpertData3();
+    String doors;
+    String size;
 
     /**
      * Instantiator of the EC2 class
@@ -30,7 +32,7 @@ public class ExpertController3 implements ExpertControllerInterface{
      */
     public void startSearch(){
         try {
-            searchResults = expert.search(searchParams);
+            searchResults = expert.search(doors,size);
         } catch(IOException e) {
             System.err.println("Exception: " + e.getMessage());
         }
@@ -45,10 +47,15 @@ public class ExpertController3 implements ExpertControllerInterface{
     }
 
     /**
-     * Updates search parameters based on user inputted information.
+     * Updates search parameters based on user input information.
      * @param newInfo
      */
     public void updateSpec(String newInfo) {
-        searchParams = newInfo;
+        if(!newInfo.equals("")){
+            List<String> searchparams= Arrays.asList(newInfo.split(","));
+           doors = searchparams.get(0);
+           size =  searchparams.get(1);
+        }
+        else {doors=""; size = "";}
     }
 }

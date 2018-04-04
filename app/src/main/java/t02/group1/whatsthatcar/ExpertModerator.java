@@ -14,20 +14,14 @@ import java.util.Map;
  */
 public class ExpertModerator {
 
-    public List<List<Integer>> expertsGuesslists = new ArrayList<>();
+    private List<List<Integer>> expertsGuesslists = new ArrayList<>();
     private List<ExpertControllerInterface> expertContList = new ArrayList<>();
 
     /**
-     * Add all the experts given to a list
-     * @param expert1 Expert 1
-     * @param expert2 Expert 2
-     * @param expert3 Expert 3
+     *
      */
-    public ExpertModerator(ExpertControllerInterface expert1,
-                           ExpertControllerInterface expert2, ExpertControllerInterface expert3){
-        expertContList.add(expert1);
-        expertContList.add(expert2);
-        expertContList.add(expert3);
+    public ExpertModerator(){
+
     }
 
     /**
@@ -42,15 +36,18 @@ public class ExpertModerator {
      * This divides the problem up based on the key values
      * @param problemSpec Problem spec mapping type of input to user input's value
      */
-    private void splitProblemSpec (HashMap<String, String> problemSpec){
+    public void splitProblemSpec (Map<String, String> problemSpec){
       for(String keyValue : problemSpec.keySet()){
           switch (keyValue){
               case  "make":
-                  updateExpert(problemSpec.get(keyValue), 1);
+                  updateExpert(problemSpec.get(keyValue), 0);
+                  break;
               case "type":
-                  updateExpert(problemSpec.get(keyValue), 2);
+                  updateExpert(problemSpec.get(keyValue), 1);
+                  break;
               case "doors_size":
-                  updateExpert(problemSpec.get(keyValue), 3);
+                  updateExpert(problemSpec.get(keyValue), 2);
+                  break;
               default:
           }
       }
@@ -67,7 +64,9 @@ public class ExpertModerator {
 
         //get all the guesses from each Expert Controller
         for (int i=0; i<expertContList.size(); i++){
+            expertContList.get(i).startSearch();
            expertsGuesslists.add(expertContList.get(i).getResults());
+
         }
 
         //Loop through all the guess lists from each controller
@@ -77,14 +76,14 @@ public class ExpertModerator {
 
             //loop through individual list
             for (int j = 0; j < guessList.size(); j++) {
-                //get indiviudal guess
+                //get individual guess
                 int guessID = guessList.get(j);
 
                 //if item has not been checked before
                 if (!checkedItems.contains(guessList.get(j))) {
                     //add to checked item list
                     checkedItems.add(guessList.get(j));
-                    int agreements = 1;
+                    double agreements = 1;
 
                     //loop through remaining expert lists and see if they contain the same guess
                     for (int k = i + 1; k < expertsGuesslists.size(); k++) {
@@ -92,7 +91,8 @@ public class ExpertModerator {
                             agreements++;
                         }
                     }
-                    double weight = agreements / expertsGuesslists.size();
+
+                    double weight = agreements / expertContList.size();
                     guessesWithWeights.put(guessID, weight);
                 }
             }

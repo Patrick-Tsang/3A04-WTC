@@ -7,7 +7,7 @@
     tools:context=".SearchView">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/question1"
         android:layout_width="314dp"
         android:layout_height="61dp"
         android:layout_marginStart="16dp"
@@ -18,16 +18,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/answers1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="143dp"
         android:layout_marginTop="111dp"
+        android:onClick="showMenu"
         android:text="Show Answers"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:layout_editor_absoluteX="161dp"
-        android:onClick = "showMenu"/>
+        app:layout_constraintTop_toBottomOf="@+id/question1"
+        tools:layout_editor_absoluteX="161dp" />
 
 </RelativeLayout>
