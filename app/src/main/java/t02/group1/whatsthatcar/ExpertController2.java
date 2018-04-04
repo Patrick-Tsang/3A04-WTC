@@ -15,7 +15,7 @@ public class ExpertController2 implements ExpertControllerInterface{
 
     // Defining class variables for searching and receiving data
     List<Integer> searchResults;
-    ExpertData1 expert = new ExpertData1();
+    ExpertData2 expert = new ExpertData2();
     String searchParams;
 
     /**
