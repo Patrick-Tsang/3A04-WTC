@@ -29,6 +29,15 @@ public class ExpertData3 {
         List<String> data = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(file));
 
+        // if no input(empty string), add something to it so my for loop later on works
+        if (door.equals("")) {
+            door = door + "a";
+        }
+
+        if (size.equals("")) {
+            size = size + "a";
+        }
+
         while ((line = br.readLine()) != null) {
             data.add(line);
         }
@@ -36,7 +45,7 @@ public class ExpertData3 {
         br.close();
 
         for (int i = 1; i < data.size(); i++) { // i start with 1 here to skip the headings
-            if (data.get(i).equals(door) || data.get(i).equals(size)) {
+            if (data.get(i).split(",")[0].equals(door) || data.get(i).split(",")[1].equals(size)) {
                 results3.add(i+1); // the index of the row, +1 because in the file there is no row 0
             }
         }
@@ -46,8 +55,8 @@ public class ExpertData3 {
 
 
 //    public static void main(String args[]) throws IOException {
-//        List<Integer> list = search("2", "Compact");
-//        for (int i=0; i < list.size(); i++) {
+//        List<Integer> list = search("2", "");
+//        for (int i = 0; i < list.size(); i++) {
 //            System.out.println(list.get(i));
 //        }
 //    }
