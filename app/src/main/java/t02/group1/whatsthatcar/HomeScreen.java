@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.InputStream;
+
 public class HomeScreen extends AppCompatActivity {
 
     public Button searchButton;

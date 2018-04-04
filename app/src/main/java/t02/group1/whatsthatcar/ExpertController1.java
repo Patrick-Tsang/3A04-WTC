@@ -50,4 +50,12 @@ public class ExpertController1 implements ExpertControllerInterface{
     public void updateSpec(String newInfo) {
         searchParams = newInfo;
     }
+
+    public static void main(String args[]){
+        ExpertController1 ec1 = new ExpertController1();
+        ec1.updateSpec("BMW");
+        ec1.startSearch();
+        System.out.print(ec1.getResults().size());
+    }
 }
+
