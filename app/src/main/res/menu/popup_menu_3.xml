@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/item1"
-        android:title="Title 1"/>
+        android:title=",Large"/>
     <item android:id="@+id/item2"
-        android:title="Title 2"/>
+        android:title="2,Compact"/>
     <item android:id="@+id/item3"
-        android:title="Title 3"/>
+        android:title="2,Large"/>
     <item android:id="@+id/item4"
-        android:title="Title 4"/>
+        android:title="2,Midsize"/>
+    <item android:id="@+id/item5"
+        android:title="3,Compact"/>
+    <item android:id="@+id/item6"
+        android:title="3,Large"/>
+    <item android:id="@+id/item7"
+        android:title="3,Midsize"/>
+    <item android:id="@+id/item8"
+        android:title="4,Compact"/>
+    <item android:id="@+id/item9"
+        android:title="4,Large"/>
+    <item android:id="@+id/item10"
+        android:title="4,Midsize"/>
 </menu>

@@ -25,22 +25,7 @@ public class SearchViewQ2 extends AppCompatActivity implements PopupMenu.OnMenuI
 
     @Override
     public boolean onMenuItemClick(MenuItem item){
-        switch (item.getItemId()){
-            case R.id.item1:
-                Toast.makeText(this, "Item 1 clicked",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.item2:
-                Toast.makeText(this, "Item 2 clicked",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.item3:
-                Toast.makeText(this, "Item 3 clicked",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.item4:
-                Toast.makeText(this, "Item 4 clicked",Toast.LENGTH_SHORT).show();
-                break;
-            default :
-                return false;
-        }
+        Toast.makeText(this, item.getTitle() + " clicked",Toast.LENGTH_SHORT).show();
 //        TextView prompt = (TextView)findViewById(R.id.question2);
 //        prompt.setVisibility(View.INVISIBLE);
 //

@@ -5,6 +5,7 @@ package t02.group1.whatsthatcar;
  * Created by Patrick on 2018-04-02.
  */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -45,34 +46,23 @@ public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuIte
 
     @Override
     public boolean onMenuItemClick(MenuItem item){
-        switch (item.getItemId()){
-            case R.id.item1:
-                Toast.makeText(this, "Item 1 clicked",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.item2:
-                Toast.makeText(this, "Item 2 clicked",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.item3:
-                Toast.makeText(this, "Item 3 clicked",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.item4:
-                Toast.makeText(this, "Item 4 clicked",Toast.LENGTH_SHORT).show();
-                break;
-            default :
-                return false;
-        }
-        TextView prompt = (TextView)findViewById(R.id.question1);
-        prompt.setVisibility(View.INVISIBLE);
+        Toast.makeText(this, item.getTitle() + " clicked",Toast.LENGTH_SHORT).show();
 
-        Button answers = (Button)findViewById(R.id.answers1);
-        answers.setVisibility(View.INVISIBLE);
+//        TextView prompt = (TextView)findViewById(R.id.question1);
+//        prompt.setVisibility(View.INVISIBLE);
+//
+//        Button answers = (Button)findViewById(R.id.answers1);
+//        answers.setVisibility(View.INVISIBLE);
+        Intent toy = new Intent(SearchView.this, SearchViewQ2.class);
+        startActivity(toy);
 
-        try {
-            System.out.println(ExpertData1.search("BMW"));
-            Log.d("Search Results:", "Search Completed");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        //Patrick's search testing
+//        try {
+//            System.out.println(ExpertData1.search("BMW"));
+//            Log.d("Search Results:", "Search Completed");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         return true;
     }
 
