@@ -32,11 +32,12 @@ public class Driver {
         HashMap<String, String> problem = new HashMap<>();
         problem.put("make", "BMW");
         problem.put("type", "Coupe");
-        problem.put("doors_size", "");
+        problem.put("doors_size", "2,Compact");
         se.setProblem(problem);
         se.updateModerator();
+        se.search();
 
-       Map<Integer, Double> guesses = em.getGuesses();
+       Map<Integer, Double> guesses = se.getGuesses();
 
         for (Map.Entry<Integer, Double> entry : guesses.entrySet())
         {

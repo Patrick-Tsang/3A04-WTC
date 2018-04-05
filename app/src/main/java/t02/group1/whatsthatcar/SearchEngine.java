@@ -1,9 +1,14 @@
 package t02.group1.whatsthatcar;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
+import java.util.stream.Stream;
 
 /**
  * This class handles the interaction from the UI controller and the Expert Moderator
@@ -47,6 +52,13 @@ public class SearchEngine {
         guessList = guesses;
     }
 
+    public void search(){
+        Map<Integer, Double> mappedGuesses = em.getGuesses();
+        //maybe sort here???
+
+        setGuesses(mappedGuesses);
+    }
+    
     /**
      *
      * @return This is the list of guesses with their weights attached
