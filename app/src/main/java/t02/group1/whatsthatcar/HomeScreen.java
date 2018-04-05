@@ -8,58 +8,24 @@ import android.widget.Button;
 
 public class HomeScreen extends AppCompatActivity {
 
-    public Button searchButton;
-    public Button historyButton;
-    public Button helpButton;
-
-    public void init(){
-        searchButton = (Button)findViewById(R.id.searchButton);
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent toy = new Intent(HomeScreen.this, SearchView.class);
-                startActivity(toy);
-            }
-        });
-
-        historyButton = (Button)findViewById(R.id.historyButton);
-        historyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent toy = new Intent(HomeScreen.this, HistoryView.class);
-                startActivity(toy);
-            }
-        });
-
-        helpButton = (Button)findViewById(R.id.helpButton);
-        helpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent toy = new Intent(HomeScreen.this, HelpView.class);
-                startActivity(toy);
-            }
-        });
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-        init();
     }
 
-    public void beginSearch(){
-
+    public void beginSearch(View v){
+        Intent toy = new Intent(HomeScreen.this, SearchView.class);
+        startActivity(toy);
     }
 
-    public void getHelp(){
-
+    public void getHelp(View v){
+        Intent toy = new Intent(HomeScreen.this, HelpView.class);
+        startActivity(toy);
     }
 
-    public void viewHistory(){
-
+    public void viewHistory(View v){
+        Intent toy = new Intent(HomeScreen.this, HistoryView.class);
+        startActivity(toy);
     }
 }

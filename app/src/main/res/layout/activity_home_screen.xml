@@ -14,6 +14,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="368dp"
         android:text="Search"
+        android:onClick="beginSearch"
         app:layout_constraintEnd_toStartOf="@+id/helpButton"
         app:layout_constraintHorizontal_bias="0.023"
         app:layout_constraintStart_toEndOf="@+id/historyButton"
@@ -37,6 +38,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="368dp"
         android:text="History"
+        android:onClick="viewHistory"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -47,6 +49,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginTop="368dp"
         android:text="Help"
+        android:onClick="getHelp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 </android.support.constraint.ConstraintLayout>
