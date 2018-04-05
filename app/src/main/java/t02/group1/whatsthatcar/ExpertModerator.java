@@ -12,8 +12,10 @@ import java.util.Map;
  * @author Liam Macpherson
  * @date 02/04/2018
  */
+
 public class ExpertModerator {
 
+    static final private double CUTOFF_WEIGHT =0.5;
     private List<List<Integer>> expertsGuesslists = new ArrayList<>();
     private List<ExpertControllerInterface> expertContList = new ArrayList<>();
 
@@ -93,32 +95,12 @@ public class ExpertModerator {
                     }
 
                     double weight = agreements / expertContList.size();
-                    guessesWithWeights.put(guessID, weight);
+                    if(weight>CUTOFF_WEIGHT) {
+                        guessesWithWeights.put(guessID, weight);
+                    }
                 }
             }
         }
-
-        /** Messier uncommited getter of experts agreement
-         *  Just in case the above doesn't work. 02/04/2018
-         *         List<Integer> commonGuesses = new ArrayList<>();
-         List<Integer> bestGuesses = new ArrayList<>();
-        // Set the common guess to the first list of guess and then loop through the experts and only keep the common results.
-        // Quality of experts is based on the order in which they are added
-        commonGuesses.addAll(expertsGuesses.get(i));
-        for(int i=1; i<expertsGuesses.size()-1; i++){
-                //experts do not agree on any guesses
-                if(commonGuesses.isEmpty()){
-                    num_of_disagrees++;
-                    //set the common guesses to the expert
-                    commonGuesses = expertsGuesses.get(i-1);
-                }
-            commonGuesses.retainAll((expertsGuesses.get(i)));
-        }
-
-        if(num_of_disagrees == 0){
-            bestGuesses = commonGuesses;
-        }
-        **/
         return guessesWithWeights;
     }
 
