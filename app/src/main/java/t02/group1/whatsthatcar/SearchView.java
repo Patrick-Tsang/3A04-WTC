@@ -7,6 +7,7 @@ package t02.group1.whatsthatcar;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -15,20 +16,30 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 
 public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
+
+    static InputStream file1;
+    static InputStream file2;
+    static InputStream file3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        file1 = getResources().openRawResource(R.raw.data1);
+        file2 = getResources().openRawResource(R.raw.data2);
+        file3 = getResources().openRawResource(R.raw.data3);
     }
 
     public void showMenu(View v){
         PopupMenu menu = new PopupMenu(this, v);
         menu.setOnMenuItemClickListener(this);
-        menu.inflate(R.menu.popup_menu);
+        menu.inflate(R.menu.popup_menu_1);
         menu.show();
     }
 
@@ -56,6 +67,12 @@ public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuIte
         Button answers = (Button)findViewById(R.id.answers1);
         answers.setVisibility(View.INVISIBLE);
 
+        try {
+            System.out.println(ExpertData1.search("BMW"));
+            Log.d("Search Results:", "Search Completed");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return true;
     }
 

@@ -1,8 +1,8 @@
 package t02.group1.whatsthatcar;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * @date    03/04/2018
  */
 
-public class ExpertData2 {
+public class ExpertData2 extends SearchView{
 
     /**
      * The search method read through the data file and find the make that equals to the input
@@ -23,10 +23,9 @@ public class ExpertData2 {
     public static List<Integer> search(String search) throws IOException {
 
         List<Integer> results2 = new ArrayList<>();
-        String file = "C:\\Users\\Liam\\Desktop\\Uni Stuff or work\\Uni\\International Study\\Fourth year\\Sem2\\3A04 - Large System Design\\Project\\WhatsThatCar\\3A04-WTC\\app\\src\\main\\res\\raw\\data2.csv"; // file that contains only info of "type"
         String line = "";
         List<String> data = new ArrayList<>();
-        BufferedReader br = new BufferedReader(new FileReader(file));
+        BufferedReader br = new BufferedReader(new InputStreamReader(file2));
 
         while ((line = br.readLine()) != null) {
             data.add(line);
