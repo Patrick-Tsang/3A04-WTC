@@ -51,7 +51,7 @@ public class ExpertController3 implements ExpertControllerInterface{
      * @param newInfo
      */
     public void updateSpec(String newInfo) {
-        if(!newInfo.equals("")){
+        if(!newInfo.equals("") && newInfo.length() > 2){
             List<String> searchparams= Arrays.asList(newInfo.split(","));
            doors = searchparams.get(0);
            size =  searchparams.get(1);
