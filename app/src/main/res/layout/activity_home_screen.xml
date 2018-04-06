@@ -56,23 +56,23 @@
 
     <ImageButton
         android:id="@+id/searchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="108dp"
         android:contentDescription="search button"
         android:onClick="beginSearch"
         app:layout_constraintEnd_toStartOf="@+id/helpButton"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toEndOf="@+id/historyButton"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:srcCompat="@drawable/search" />
 
     <ImageButton
         android:id="@+id/historyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="184dp"
+        android:layout_width="195dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="212dp"
         android:contentDescription="history button"
         android:onClick="viewHistory"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,10 +81,10 @@
 
     <ImageButton
         android:id="@+id/helpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="132dp"
-        android:layout_marginTop="256dp"
+        android:layout_width="193dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginTop="312dp"
         android:contentDescription="help button"
         android:onClick="getHelp"
         app:layout_constraintEnd_toEndOf="parent"
