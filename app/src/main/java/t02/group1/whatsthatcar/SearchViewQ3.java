@@ -24,26 +24,34 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
         menu.show();
     }
 
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        Toast.makeText(this, item.getTitle() + " clicked",Toast.LENGTH_SHORT).show();
-//        TextView prompt = (TextView)findViewById(R.id.question3);
-//        prompt.setVisibility(View.INVISIBLE);
-//
-//        Button answers = (Button)findViewById(R.id.answers3);
-//        answers.setVisibility(View.INVISIBLE);
-//        Intent toy = new Intent(SearchViewQ3.this, SearchViewResult.class);
-//        startActivity(toy);
-        Button b = (Button)findViewById(R.id.typeButton);
-        b.setVisibility(View.VISIBLE);
-
-        return true;
-    }
-
     public void showMenu2(View v){
         PopupMenu menu = new PopupMenu(this, v);
         menu.setOnMenuItemClickListener(this);
         menu.inflate(R.menu.popup_menu_4);
         menu.show();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        Toast.makeText(this, item.getTitle() + " clicked",Toast.LENGTH_SHORT).show();
+
+        Button b = (Button)findViewById(R.id.doorsButton);
+        b.setVisibility(View.INVISIBLE);
+        Button a = (Button)findViewById(R.id.typeButton);
+        a.setVisibility(View.VISIBLE);
+        String check = item.getTitle().toString();
+        //check if the result is from the doors selection - show the search button if it is NOT
+        if (!(check.equals("0") || check.equals("2") || check.equals("3") || check.equals("4"))){
+            Button c = (Button)findViewById(R.id.typeButton);
+            c.setVisibility(View.INVISIBLE);
+            Button d = (Button)findViewById(R.id.searchButton);
+            d.setVisibility(View.VISIBLE);
+        }
+        return true;
+    }
+
+    public void searchPress(View v){
+        Intent toy = new Intent(SearchViewQ3.this, SearchViewResult.class);
+        startActivity(toy);
     }
 }
