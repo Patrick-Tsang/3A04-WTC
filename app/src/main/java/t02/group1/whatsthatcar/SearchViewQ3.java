@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
@@ -31,8 +32,18 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
 //
 //        Button answers = (Button)findViewById(R.id.answers3);
 //        answers.setVisibility(View.INVISIBLE);
-        Intent toy = new Intent(SearchViewQ3.this, SearchViewResult.class);
-        startActivity(toy);
+//        Intent toy = new Intent(SearchViewQ3.this, SearchViewResult.class);
+//        startActivity(toy);
+        Button b = (Button)findViewById(R.id.typeButton);
+        b.setVisibility(View.VISIBLE);
+
         return true;
+    }
+
+    public void showMenu2(View v){
+        PopupMenu menu = new PopupMenu(this, v);
+        menu.setOnMenuItemClickListener(this);
+        menu.inflate(R.menu.popup_menu_4);
+        menu.show();
     }
 }
