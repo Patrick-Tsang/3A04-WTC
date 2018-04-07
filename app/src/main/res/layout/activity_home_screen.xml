@@ -1,94 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="t02.group1.whatsthatcar.HomeScreen">
 
-    <!--<Button-->
-        <!--android:id="@+id/searchButton"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginEnd="8dp"-->
-        <!--android:layout_marginStart="48dp"-->
-        <!--android:layout_marginTop="368dp"-->
-        <!--android:text="Search"-->
-        <!--android:onClick="beginSearch"-->
-        <!--app:layout_constraintEnd_toStartOf="@+id/helpButton"-->
-        <!--app:layout_constraintHorizontal_bias="0.023"-->
-        <!--app:layout_constraintStart_toEndOf="@+id/historyButton"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
-
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView"
         android:layout_width="246dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
         android:contentDescription="guide description"
         android:text="Please select an option."
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--<Button-->
-        <!--android:id="@+id/historyButton"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginStart="24dp"-->
-        <!--android:layout_marginTop="368dp"-->
-        <!--android:text="History"-->
-        <!--android:onClick="viewHistory"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
-
-    <!--<Button-->
-        <!--android:id="@+id/helpButton"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginEnd="24dp"-->
-        <!--android:layout_marginTop="368dp"-->
-        <!--android:text="Help"-->
-        <!--android:onClick="getHelp"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
-
-    <ImageButton
+    <br.com.bloder.magic.view.MagicButton
         android:id="@+id/searchButton"
-        android:layout_width="180dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="108dp"
-        android:contentDescription="search button"
-        android:onClick="beginSearch"
-        app:layout_constraintEnd_toStartOf="@+id/helpButton"
-        app:layout_constraintHorizontal_bias="0.515"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:button_icon="@drawable/search"
+        app:button_icon_height="25dp"
+        app:button_icon_width="25dp"
+        app:expandable_area_color="#99c1f9"
+        app:hide_text="Search"
+        app:hide_text_color="#497cf2"
+        app:hide_text_size="10dp"
+        app:icon_button_color="#306cf9"
+        app:magic_button_size="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/testView"
         app:layout_constraintStart_toEndOf="@+id/historyButton"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/search" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <ImageButton
+    <br.com.bloder.magic.view.MagicButton
         android:id="@+id/historyButton"
-        android:layout_width="195dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="212dp"
-        android:contentDescription="history button"
-        android:onClick="viewHistory"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/history" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:button_icon="@drawable/history"
+        app:button_icon_height="25dp"
+        app:button_icon_width="25dp"
+        app:expandable_area_color="#a3ffa9"
+        app:hide_text="History"
+        app:hide_text_color="#1ba737"
+        app:hide_text_size="10dp"
+        app:icon_button_color="#1ba737"
+        app:magic_button_size="50dp"
+        app:layout_constraintStart_toStartOf="@id/searchButton"
+        app:layout_constraintTop_toTopOf="@id/searchButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <ImageButton
+    <br.com.bloder.magic.view.MagicButton
         android:id="@+id/helpButton"
-        android:layout_width="193dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginTop="312dp"
-        android:contentDescription="help button"
-        android:onClick="getHelp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/help" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:button_icon="@drawable/help"
+        app:button_icon_height="25dp"
+        app:button_icon_width="25dp"
+        app:expandable_area_color="#fbff8a"
+        app:hide_text="Help"
+        app:hide_text_color="#fab938"
+        app:hide_text_size="10dp"
+        app:icon_button_color="#fab938"
+        app:magic_button_size="50dp"
+        app:layout_constraintStart_toStartOf="@id/historyButton"
+        app:layout_constraintTop_toTopOf="@id/historyButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-</android.support.constraint.ConstraintLayout>
+
+    <!--<Button-->
+    <!--android:id="@+id/searchButton"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginEnd="8dp"-->
+    <!--android:layout_marginStart="48dp"-->
+    <!--android:layout_marginTop="368dp"-->
+    <!--android:text="Search"-->
+    <!--android:onClick="beginSearch"-->
+    <!--app:layout_constraintEnd_toStartOf="@+id/helpButton"-->
+    <!--app:layout_constraintHorizontal_bias="0.023"-->
+    <!--app:layout_constraintStart_toEndOf="@+id/historyButton"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/historyButton"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="24dp"-->
+    <!--android:layout_marginTop="368dp"-->
+    <!--android:text="History"-->
+    <!--android:onClick="viewHistory"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/helpButton"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginEnd="24dp"-->
+    <!--android:layout_marginTop="368dp"-->
+    <!--android:text="Help"-->
+    <!--android:onClick="getHelp"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
+
+</LinearLayout>
+    <!--</android.support.constraint.ConstraintLayout>-->
