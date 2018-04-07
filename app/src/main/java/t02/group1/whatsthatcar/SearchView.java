@@ -27,6 +27,7 @@ public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuIte
     static InputStream file2;
     static InputStream file3;
 
+    static String ans1 = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +57,7 @@ public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuIte
         Intent toy = new Intent(SearchView.this, SearchViewQ2.class);
         startActivity(toy);
 
+        ans1 = item.toString();
         //Patrick's search testing
 //        try {
 //            System.out.println(ExpertData1.search("BMW"));

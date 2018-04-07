@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 public class SearchViewQ2 extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
+    String ans2 = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class SearchViewQ2 extends AppCompatActivity implements PopupMenu.OnMenuI
 //        answers.setVisibility(View.INVISIBLE);
         Intent toy = new Intent(SearchViewQ2.this, SearchViewQ3.class);
         startActivity(toy);
+        
         return true;
     }
 }
