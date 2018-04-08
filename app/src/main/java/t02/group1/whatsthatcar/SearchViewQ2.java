@@ -12,6 +12,10 @@ public class SearchViewQ2 extends AppCompatActivity implements PopupMenu.OnMenuI
 
     static String ans2 = "";
 
+    static UserInterfaceController ui = HomeScreen.ui;
+    static ExpertModerator em = HomeScreen.em;
+    static SearchEngine se = HomeScreen.se;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

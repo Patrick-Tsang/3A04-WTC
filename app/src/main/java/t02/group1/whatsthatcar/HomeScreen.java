@@ -15,10 +15,26 @@ public class HomeScreen extends AppCompatActivity {
 
     MagicButton btnSearch, btnHistory, btnHelp;
 
+    static UserInterfaceController ui;
+    static ExpertModerator em;
+    static SearchEngine se;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
+        ExpertController1 ec1 = new ExpertController1();
+        ExpertController2 ec2 = new ExpertController2();
+        ExpertController3 ec3 = new ExpertController3();
+
+        em = new ExpertModerator();
+
+        em.addExpert(ec1);
+        em.addExpert(ec2);
+        em.addExpert(ec3);
+
+        se = new SearchEngine(em);
+        ui = new UserInterfaceController(se);
 
         btnSearch = (MagicButton) findViewById(R.id.searchButton);
         btnHelp = (MagicButton) findViewById(R.id.helpButton);

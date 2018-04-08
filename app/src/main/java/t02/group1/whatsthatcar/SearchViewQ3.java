@@ -14,7 +14,10 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
 
     static String ans3 = " ";
     static String ans3pt2 = "";
-    static UserInterfaceController ui = Driver.ui;
+
+    static UserInterfaceController ui = HomeScreen.ui;
+    static ExpertModerator em = HomeScreen.em;
+    static SearchEngine se = HomeScreen.se;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +62,7 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
     }
 
     public void searchPress(View v){
-
+        ui.loadData();
         Intent toy = new Intent(SearchViewQ3.this, SearchViewResult.class);
         startActivity(toy);
     }
