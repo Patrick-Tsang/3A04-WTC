@@ -59,6 +59,7 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
     }
 
     public void searchPress(View v){
+
         Intent toy = new Intent(SearchViewQ3.this, SearchViewResult.class);
         startActivity(toy);
     }

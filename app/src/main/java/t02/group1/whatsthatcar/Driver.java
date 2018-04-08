@@ -1,5 +1,7 @@
 package t02.group1.whatsthatcar;
 
+import android.util.Log;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
