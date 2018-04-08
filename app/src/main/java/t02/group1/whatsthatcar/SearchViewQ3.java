@@ -3,6 +3,7 @@ package t02.group1.whatsthatcar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,10 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
+
+    static String ans3 = " ";
+    static String ans3pt2 = "";
+    static UserInterfaceController ui = Driver.ui;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +49,11 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
         if (!(check.equals("0") || check.equals("2") || check.equals("3") || check.equals("4"))){
             Button c = (Button)findViewById(R.id.typeButton);
             c.setVisibility(View.INVISIBLE);
+            ans3pt2 = item.getTitle().toString();
             Button d = (Button)findViewById(R.id.searchButton);
             d.setVisibility(View.VISIBLE);
+        }else{
+            ans3 = item.getTitle().toString();
         }
         return true;
     }

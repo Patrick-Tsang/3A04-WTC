@@ -10,7 +10,8 @@ import android.widget.Toast;
 
 public class SearchViewQ2 extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
-    String ans2 = "";
+    static String ans2 = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +33,10 @@ public class SearchViewQ2 extends AppCompatActivity implements PopupMenu.OnMenuI
 //
 //        Button answers = (Button)findViewById(R.id.answers2);
 //        answers.setVisibility(View.INVISIBLE);
+        ans2 = item.getTitle().toString();
         Intent toy = new Intent(SearchViewQ2.this, SearchViewQ3.class);
         startActivity(toy);
-        
+
         return true;
     }
 }

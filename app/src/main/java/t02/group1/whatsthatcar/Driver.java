@@ -9,8 +9,10 @@ import java.util.Map;
  */
 public class Driver {
 
+    static UserInterfaceController ui;
+
     public static void main(String[] args){
-        UserInterfaceController ui;
+
         ExpertModerator em;
         SearchEngine se;
 
@@ -43,8 +45,6 @@ public class Driver {
         {
             System.out.println(entry.getKey() + "-" + entry.getValue());
         }
-
-
     }
 
 }
