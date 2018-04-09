@@ -27,11 +27,6 @@ public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuIte
     static InputStream file2;
     static InputStream file3;
 
-    static String ans1 = "";
-
-    static UserInterfaceController ui = HomeScreen.ui;
-    static ExpertModerator em = HomeScreen.em;
-    static SearchEngine se = HomeScreen.se;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
