@@ -26,7 +26,7 @@ public class HelpData {
         String helpData= "This is an Android mobile application that will allow users to determine a specific car,\n " +
                 "by answering questions concerning identifiable traits and little knowledge of the vehicle. \n" +
                 "More specific help can be found in both of the tasks. \nSelect \"Search History\" to view previous searches.\n"+
-                "Select \"Search\" to begin a new search";
+                "Select \"Search\" to begin a new search.";
 
         return helpData;
     }

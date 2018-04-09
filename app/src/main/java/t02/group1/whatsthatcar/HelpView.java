@@ -34,7 +34,7 @@ public class HelpView extends AppCompatActivity {
         findViewById(R.id.btnGeneral).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showHelp("Ceneral Help", HelpData.getGeneralHelp());
+                showHelp("General Help", HelpData.getGeneralHelp());
             }
         });
     }
