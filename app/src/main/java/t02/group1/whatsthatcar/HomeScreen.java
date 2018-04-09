@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.InputStream;
 
 import br.com.bloder.magic.view.MagicButton;
@@ -18,6 +19,8 @@ public class HomeScreen extends AppCompatActivity {
     static UserInterfaceController ui;
     static ExpertModerator em;
     static SearchEngine se;
+    static File filesDir;
+    SearchHistory history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,9 @@ public class HomeScreen extends AppCompatActivity {
         ExpertController1 ec1 = new ExpertController1();
         ExpertController2 ec2 = new ExpertController2();
         ExpertController3 ec3 = new ExpertController3();
+
+        filesDir = getFilesDir();
+        history = new SearchHistory();
 
         em = new ExpertModerator();
 

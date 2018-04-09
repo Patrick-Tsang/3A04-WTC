@@ -69,6 +69,7 @@ public class SearchViewResult extends AppCompatActivity {
         problem.put("doors_size", doors+","+size);
         se.setProblem(problem);
         se.updateModerator();
+
         se.search();
 
         Map<Integer, Double> guesses = se.getGuesses();

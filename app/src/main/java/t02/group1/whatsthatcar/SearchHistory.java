@@ -18,8 +18,8 @@ import java.util.Queue;
  * Created by Patrick on 2018-04-02.
  */
 
-public class SearchHistory extends HistoryView{
-    Queue<Map<String, String>> guessHistory = new PriorityQueue<>(10);
+public class SearchHistory extends HomeScreen{
+    ArrayList<Map<String, String>> guessHistory = new ArrayList();
     String filename = "history.txt";
     File file;
 
@@ -29,24 +29,25 @@ public class SearchHistory extends HistoryView{
     String[] tempStr;
 
     /**
-     * TODO: This method should check the history file for the data and then parse for the queue
+     * Constructor for the Search History object
      *
      */
     public SearchHistory(){
         file = new File(filesDir, filename);
         Log.d("file path", filesDir.toString());
+
         try {
             reader = new FileReader(file);
             buffer = new BufferedReader(reader);
-            while (!buffer.readLine().equals("")) {
-                Log.d("Buffer Line:", " " + buffer.readLine());
-                tempStr = buffer.readLine().split(",");
+            String line;
+            while ((line = buffer.readLine()) != null) {
+                Log.d("Buffer Line:", " " + line);
+                tempStr = line.split(",");
                 temp = new HashMap<>();
                 temp.put("make",tempStr[0]);
                 temp.put("type",tempStr[1]);
-                temp.put("doors",tempStr[2]);
-                temp.put("size",tempStr[3]);
-                Log.d("History -> ", "entry read from file");
+                temp.put("doors_size",tempStr[2] + "," + tempStr[3]);
+                guessHistory.add(temp);
             }
             reader.close();
             buffer.close();
@@ -56,18 +57,19 @@ public class SearchHistory extends HistoryView{
     }
 
     /**
-     *
      * @param userIn
      */
     public void updateHistory(Map<String, String> userIn) {
-        guessHistory.add(userIn);
+        guessHistory.add(0, userIn);
+        while (guessHistory.size() > 10){
+            guessHistory.remove(10);
+        }
         try{
             PrintWriter writer = new PrintWriter(file);
             for(Map<String, String> entry: guessHistory){
-                writer.println(entry.get("make") + "," + entry.get("type") + "," + entry.get("doors") + "," + entry.get("size"));
+                writer.println(entry.get("make") + "," + entry.get("type") + "," + entry.get("doors_size"));
             }
             writer.close();
-            Log.d("History", "Entry written properly");
         } catch(Exception e){
             e.printStackTrace();
         }

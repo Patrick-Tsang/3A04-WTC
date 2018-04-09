@@ -17,7 +17,7 @@ import java.util.stream.Stream;
  * @date  02/04/2018
  */
 
-public class SearchEngine {
+public class SearchEngine{
 
     Map<String, String> problemSpec = new HashMap<>();
     Map<Integer, Double>  guessList = new HashMap<>();
