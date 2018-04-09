@@ -13,12 +13,8 @@
         android:layout_height="61dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-<<<<<<< HEAD
         android:text="What type of car is it?"
-=======
-        android:text="Expert 2 Question"
         android:textColor="#ffff"
->>>>>>> bfeea95b4366bc9bb5107bc42776b208f5eb2f7b
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

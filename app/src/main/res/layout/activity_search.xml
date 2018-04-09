@@ -13,12 +13,8 @@
         android:layout_height="61dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-<<<<<<< HEAD
         android:text="What is the make of the car?"
-=======
-        android:text="Expert 1 Question"
         android:textColor="#ffff"
->>>>>>> bfeea95b4366bc9bb5107bc42776b208f5eb2f7b
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +40,6 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="134dp"
         android:layout_marginEnd="58dp"
-        android:onClick="displayHelp"
         android:text="Help" />
 
 </RelativeLayout>
