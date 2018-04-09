@@ -12,7 +12,7 @@
         android:layout_height="61dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Expert 3 Question"
+        android:text="Please enter the number of doors and then the size of the car:"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="112dp"
         android:onClick="showMenu"
-        android:text="Show Answers"
+        android:text="Doors Options"
         app:layout_constraintTop_toBottomOf="@+id/question2"
         tools:layout_editor_absoluteX="161dp" />
 
@@ -36,16 +36,14 @@
         android:layout_alignTop="@+id/doorsButton"
         android:layout_centerHorizontal="true"
         android:onClick="showMenu2"
-        android:text="Show Answers"
+        android:text="Size Options"
         android:visibility="invisible" />
 
     <Button
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/question3"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="263dp"
+        android:layout_centerInParent="true"
         android:onClick="searchPress"
         android:text="Search"
         android:visibility="invisible" />

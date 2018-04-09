@@ -25,22 +25,28 @@
             android:orientation="vertical"
             android:layout_above="@id/bottom"
             android:layout_below="@id/top" >
-            <ListView android:id="@+id/listResult"
+
+            <ListView
+                android:id="@+id/listResult"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginBottom="6dip"/>
+                android:layout_height="500dp"
+                android:layout_marginBottom="6dip" />
         </LinearLayout>
-        <LinearLayout android:id="@+id/bottom"
+
+        <LinearLayout
+            android:id="@+id/bottom"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true"  >
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:orientation="horizontal">
+
             <Button
                 android:id="@+id/returnHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="148dp"
-                android:layout_marginTop="424dp"
+                android:layout_marginStart="160dp"
+                android:layout_marginTop="30dp"
                 android:text="HOME" />
         </LinearLayout>
     </RelativeLayout>
