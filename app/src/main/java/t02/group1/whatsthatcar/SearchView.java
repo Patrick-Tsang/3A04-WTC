@@ -55,9 +55,10 @@ public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuIte
 //        Button answers = (Button)findViewById(R.id.answers1);
 //        answers.setVisibility(View.INVISIBLE);
         Intent toy = new Intent(SearchView.this, SearchViewQ2.class);
+        toy.putExtra("make", item.getTitle());
         startActivity(toy);
 
-        ans1 = item.getTitle().toString();
+   
         //Patrick's search testing
 //        try {
 //            System.out.println(ExpertData1.search("BMW"));
