@@ -21,7 +21,6 @@ import java.util.Map;
 
 public class HistoryView extends AppCompatActivity {
     HashMap searchHistory = new HashMap();
-    SearchHistory sh;
 
     Button returnHome;
     private ListView listResult;
@@ -43,21 +42,21 @@ public class HistoryView extends AppCompatActivity {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
-        sh = new SearchHistory();
-        returnHome = findViewById(R.id.returnHome);
-        returnHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent toy = new Intent(HistoryView.this, HomeScreen.class);
-                startActivity(toy);
-            }
-        });
+
+//        returnHome = (Button) findViewById(R.id.returnHome);
+//        returnHome.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent toy = new Intent(HistoryView.this, HomeScreen.class);
+//                startActivity(toy);
+//            }
+//        });
 
         displayHistory();
     }
 
     public void displayHistory(){
-        final List<Map<String, String>> listems  = sh.getHistory();
+        final List<Map<String, String>> listems  = HomeScreen.history.getHistory();
         SimpleAdapter simplead = new SimpleAdapter(this, listems,
                 R.layout.history_item, new String[] {"make", "type", "doors_size" },
                 new int[] {R.id.txtMake,R.id.txtType, R.id.txtDoors});

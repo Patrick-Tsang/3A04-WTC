@@ -19,8 +19,7 @@ public class HomeScreen extends AppCompatActivity {
     static UserInterfaceController ui;
     static ExpertModerator em;
     static SearchEngine se;
-    static File filesDir;
-    SearchHistory history;
+    static SearchHistory history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +29,8 @@ public class HomeScreen extends AppCompatActivity {
         ExpertController2 ec2 = new ExpertController2();
         ExpertController3 ec3 = new ExpertController3();
 
-        filesDir = getFilesDir();
-        history = new SearchHistory();
+        File filesDir = getFilesDir();
+        history = new SearchHistory(filesDir);
 
         em = new ExpertModerator();
 

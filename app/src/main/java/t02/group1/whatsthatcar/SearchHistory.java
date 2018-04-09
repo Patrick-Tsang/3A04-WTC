@@ -32,7 +32,7 @@ public class SearchHistory extends HomeScreen{
      * Constructor for the Search History object
      *
      */
-    public SearchHistory(){
+    public SearchHistory(File filesDir){
         file = new File(filesDir, filename);
         Log.d("file path", filesDir.toString());
 
