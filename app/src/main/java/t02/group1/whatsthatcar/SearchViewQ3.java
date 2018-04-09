@@ -12,12 +12,8 @@ import android.widget.Toast;
 
 public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
-    static String ans3 = " ";
-    static String ans3pt2 = "";
-
-    static UserInterfaceController ui = HomeScreen.ui;
-    static ExpertModerator em = HomeScreen.em;
-    static SearchEngine se = HomeScreen.se;
+    private String doors;
+    private String size;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,18 +48,23 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
         if (!(check.equals("0") || check.equals("2") || check.equals("3") || check.equals("4"))){
             Button c = (Button)findViewById(R.id.typeButton);
             c.setVisibility(View.INVISIBLE);
-            ans3pt2 = item.getTitle().toString();
             Button d = (Button)findViewById(R.id.searchButton);
             d.setVisibility(View.VISIBLE);
+            doors = item.getTitle().toString();
         }else{
-            ans3 = item.getTitle().toString();
+            size = item.getTitle().toString();
         }
-        return true;
     }
 
     public void searchPress(View v){
-        ui.loadData();
         Intent toy = new Intent(SearchViewQ3.this, SearchViewResult.class);
+        Intent getIntent = getIntent();
+        String make = getIntent.getStringExtra("make");
+        String type = getIntent.getStringExtra("type");
+        toy.putExtra("make", make);
+        toy.putExtra("type", type);
+        toy.putExtra("doors", doors);
+        toy.putExtra("size", size);
         startActivity(toy);
     }
 }
