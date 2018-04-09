@@ -1,5 +1,7 @@
 package t02.group1.whatsthatcar;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +18,13 @@ public class SearchViewQ2 extends AppCompatActivity implements PopupMenu.OnMenuI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_view_q2);
+
+        findViewById(R.id.helpButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showHelp("Search Help Q2", "Select the type from coupe to SUV!");
+            }
+        });
     }
 
     public void showMenu(View v){
@@ -23,6 +32,25 @@ public class SearchViewQ2 extends AppCompatActivity implements PopupMenu.OnMenuI
         menu.setOnMenuItemClickListener(this);
         menu.inflate(R.menu.popup_menu_2);
         menu.show();
+    }
+
+    private void showHelp(String title,String help)
+    {
+        AlertDialog.Builder localBuilder = new AlertDialog.Builder(SearchViewQ2.this);
+        localBuilder.setTitle(title);
+        localBuilder.setIcon(R.mipmap.ic_launcher);
+        localBuilder.setMessage(help);
+        localBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+            {
+
+            }
+        });
+
+        localBuilder.setCancelable(false).create();
+
+        localBuilder.show();
     }
 
     @Override

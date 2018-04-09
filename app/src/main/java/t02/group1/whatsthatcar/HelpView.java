@@ -57,6 +57,7 @@ public class HelpView extends AppCompatActivity {
 
         localBuilder.show();
     }
+
     public void closeHelp(){
 
     }

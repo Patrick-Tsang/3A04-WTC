@@ -5,6 +5,8 @@ package t02.group1.whatsthatcar;
  * Created by Patrick on 2018-04-02.
  */
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +38,13 @@ public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuIte
         file1 = getResources().openRawResource(R.raw.data1);
         file2 = getResources().openRawResource(R.raw.data2);
         file3 = getResources().openRawResource(R.raw.data3);
+
+        findViewById(R.id.helpButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showHelp("Search Help Q1", "Select the make from a variety of options!");
+            }
+        });
     }
 
     public void showMenu(View v){
@@ -69,6 +78,24 @@ public class SearchView extends AppCompatActivity implements PopupMenu.OnMenuIte
         return true;
     }
 
+    private void showHelp(String title,String help)
+    {
+        AlertDialog.Builder localBuilder = new AlertDialog.Builder(SearchView.this);
+        localBuilder.setTitle(title);
+        localBuilder.setIcon(R.mipmap.ic_launcher);
+        localBuilder.setMessage(help);
+        localBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+            {
+
+            }
+        });
+
+        localBuilder.setCancelable(false).create();
+
+        localBuilder.show();
+    }
 
     Scanner input =  new Scanner(System.in);
 
