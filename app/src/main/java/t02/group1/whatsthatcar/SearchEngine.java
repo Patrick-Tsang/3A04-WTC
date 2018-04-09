@@ -56,7 +56,7 @@ public class SearchEngine {
         Map<Integer, Double> mappedGuesses = em.getGuesses();
         //maybe sort here???
 
-        setGuesses(mappedGuesses);
+        guessList = sortMapByKey(mappedGuesses);
     }
     
     /**
@@ -73,4 +73,15 @@ public class SearchEngine {
     public void updateModerator() {
         em.splitProblemSpec(problemSpec);
     }
+    
+    private Map<Integer,Double> sortMapByKey(Map<Integer,Double> map)
+    {
+        if (map == null || map.isEmpty()) {
+            return null;
+        }
+        Map<Integer,Double> sortMap = new TreeMap<>();
+        sortMap.putAll(map);
+        return sortMap;
+    }
+
 }
