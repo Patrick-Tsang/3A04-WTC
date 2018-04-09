@@ -10,11 +10,7 @@ import android.widget.Toast;
 
 public class SearchViewQ2 extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
-    static String ans2 = "";
-
-    static UserInterfaceController ui = HomeScreen.ui;
-    static ExpertModerator em = HomeScreen.em;
-    static SearchEngine se = HomeScreen.se;
+   
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +33,12 @@ public class SearchViewQ2 extends AppCompatActivity implements PopupMenu.OnMenuI
 //
 //        Button answers = (Button)findViewById(R.id.answers2);
 //        answers.setVisibility(View.INVISIBLE);
-        ans2 = item.getTitle().toString();
         Intent toy = new Intent(SearchViewQ2.this, SearchViewQ3.class);
+        Intent getIntent = getIntent();
+        String make = getIntent.getStringExtra("make");
+        toy.putExtra("make", make);
+        toy.putExtra("type", item.getTitle());
         startActivity(toy);
-
         return true;
     }
 }
