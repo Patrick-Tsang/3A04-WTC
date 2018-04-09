@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HelpView">
 
     <TextView
@@ -13,7 +14,28 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Help Menu"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search Help" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="History Help" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnGeneral"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="General Help" />
+
+
+</LinearLayout>
