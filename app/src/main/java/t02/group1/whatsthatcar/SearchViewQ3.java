@@ -3,7 +3,6 @@ package t02.group1.whatsthatcar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -14,11 +13,12 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
 
     private String doors;
     private String size;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_view_q3);
+
+
     }
 
     public void showMenu(View v){
@@ -38,12 +38,14 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         Toast.makeText(this, item.getTitle() + " clicked",Toast.LENGTH_SHORT).show();
-
         Button b = (Button)findViewById(R.id.doorsButton);
         b.setVisibility(View.INVISIBLE);
         Button a = (Button)findViewById(R.id.typeButton);
         a.setVisibility(View.VISIBLE);
+
+
         String check = item.getTitle().toString();
+
         //check if the result is from the doors selection - show the search button if it is NOT
         if (!(check.equals("0") || check.equals("2") || check.equals("3") || check.equals("4"))){
             Button c = (Button)findViewById(R.id.typeButton);
@@ -54,6 +56,10 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
         }else{
             size = item.getTitle().toString();
         }
+
+
+
+        return true;
     }
 
     public void searchPress(View v){
