@@ -50,4 +50,15 @@
         android:text="Search"
         android:visibility="invisible" />
 
+    <Button
+        android:id="@+id/helpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="134dp"
+        android:layout_marginEnd="58dp"
+        android:onClick="displayHelp"
+        android:text="Help" />
+
 </RelativeLayout>

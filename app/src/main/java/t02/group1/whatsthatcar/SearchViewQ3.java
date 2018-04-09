@@ -1,5 +1,7 @@
 package t02.group1.whatsthatcar;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,7 +20,12 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_view_q3);
 
-
+        findViewById(R.id.helpButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showHelp("Search Help Q3", "Select the number of doors (excluding the trunk) and then the size of the vehicle (compact, midsize, large).");
+            }
+        });
     }
 
     public void showMenu(View v){
@@ -33,6 +40,25 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
         menu.setOnMenuItemClickListener(this);
         menu.inflate(R.menu.popup_menu_4);
         menu.show();
+    }
+
+    private void showHelp(String title,String help)
+    {
+        AlertDialog.Builder localBuilder = new AlertDialog.Builder(SearchViewQ3.this);
+        localBuilder.setTitle(title);
+        localBuilder.setIcon(R.mipmap.ic_launcher);
+        localBuilder.setMessage(help);
+        localBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+            {
+
+            }
+        });
+
+        localBuilder.setCancelable(false).create();
+
+        localBuilder.show();
     }
 
     @Override
@@ -69,5 +95,24 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
         toy.putExtra("doors", doors);
         toy.putExtra("size", size);
         startActivity(toy);
+    }
+
+    private void displayHelp(View v)
+    {
+        AlertDialog.Builder localBuilder = new AlertDialog.Builder(SearchViewQ3.this);
+        localBuilder.setTitle("Search Help");
+        localBuilder.setIcon(R.mipmap.ic_launcher);
+        localBuilder.setMessage(HelpData.getSearchHelp());
+        localBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
+            {
+
+            }
+        });
+
+        localBuilder.setCancelable(false).create();
+
+        localBuilder.show();
     }
 }
