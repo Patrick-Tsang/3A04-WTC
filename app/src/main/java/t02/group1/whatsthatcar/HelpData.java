@@ -7,25 +7,27 @@ package t02.group1.whatsthatcar;
 public class HelpData {
 
     static public String getSearchHelp(){
-        String toReturn = "By selecting the make, the type, the number of doors and the size of a vehicle, the application" +
-                "displays a list of matching result, user can see detailed information of a vehicle by clicking on it.";
+        String helpData = "First select the make from a variety of options! Then proceed to select the type from coupe to SUV, " +
+                "the number of doors (excluding the trunk) and the size of a vehicle can also be selected (compact, midsize, large). " +
+                "The application displays a list of matching results, users can view more detailed information about a specific vehicle " +
+                "by selecting it on this results screen ";
 
-        return toReturn;
+        return helpData;
     }
 
     static public String getHistoryHelp(){
-        String toReturn = "The application stores your most recent 10 search history, when you click on \"Search History\" button," +
-                "you can see the list of search history, by clicking on one of it, the application displays the search result" +
-                "corresponding to that search.";
+        String helpData = "The application stores the 10 most recent searches, when a user selects  \"Search History\" button," +
+                "The user's previous inputs will be and by selection one of them, the application will display the search results that match those inputs";
 
-        return toReturn;
+        return helpData;
     }
 
     static public String getGeneralHelp(){
-        String toReturn = "This is an Android mobile application that will allow users to determine a specific car, " +
-                "by answering questions concerning identifiable traits and generalistic knowledge of the vehicle. " +
-                "It is designed to allow users with limited knowledge of cars to identify different car models.  ";
+        String helpData= "This is an Android mobile application that will allow users to determine a specific car, " +
+                "by answering questions concerning identifiable traits and little knowledge of the vehicle. " +
+                "More specific help can be found in both of the tasks. Select \"Search History\" to view previous searches"+
+                "Select \"Search\" to begin a new saearch";
 
-        return toReturn;
+        return helpData;
     }
 }
