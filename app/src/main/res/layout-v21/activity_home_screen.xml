@@ -114,43 +114,5 @@
         <!--app:layout_constraintEnd_toEndOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
 
-
-    <ImageButton
-        android:id="@+id/searchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="160dp"
-        android:contentDescription="search button"
-        android:onClick="beginSearch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/search" />
-
-    <ImageButton
-        android:id="@+id/historyButton"
-        android:layout_width="213dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="56dp"
-        android:contentDescription="history button"
-        android:onClick="viewHistory"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helpButton"
-        app:srcCompat="@drawable/history" />
-
-    <ImageButton
-        android:id="@+id/helpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="56dp"
-        android:contentDescription="help button"
-        android:onClick="getHelp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchButton"
-        app:srcCompat="@drawable/help" />
-
-
 </LinearLayout>
 
