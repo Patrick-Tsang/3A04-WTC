@@ -56,9 +56,6 @@ public class SearchViewQ3 extends AppCompatActivity implements PopupMenu.OnMenuI
         }else{
             size = item.getTitle().toString();
         }
-
-
-
         return true;
     }
 
