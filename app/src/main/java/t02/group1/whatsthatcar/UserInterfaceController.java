@@ -10,20 +10,13 @@ import java.util.*;
 
 public class UserInterfaceController {
 
-    HashMap<String, String> problem = new HashMap<>();
-
     public UserInterfaceController(SearchEngine searchEngine) {
     }
 
-    public void loadData(){
-        problem.put("make", SearchView.ans1);
-        problem.put("type", SearchViewQ2.ans2);
-        problem.put("doors_size", SearchViewQ3.ans3 + "," + SearchViewQ3.ans3pt2);
-    }
+    private List<HashMap> getDataRequest(){
 
-//    private List<HashMap> getDataRequest(){
-//
-//    }
+        return null;
+    }
 
     private void sendUserInput(HashMap in){
 
