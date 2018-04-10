@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -74,77 +75,79 @@ public class SearchViewResult extends AppCompatActivity {
 
         Map<Integer, Double> guesses = se.getGuesses();
         //TODO: Create text box that is only visible for null set
-//        if (guesses.entrySet() == null){
-//
-//        } else {
+        if (guesses == null){
+            ListView list = (ListView)findViewById(R.id.listResult);
+            list.setVisibility(View.INVISIBLE);
+            TextView t = (TextView)findViewById(R.id.noMatchText);
+            t.setVisibility(View.VISIBLE);
+            t.setText("There are no matches, try refining your search");
+        } else {
             for (Map.Entry<Integer, Double> entry : guesses.entrySet()) {
                 System.out.println(entry.getKey() + "-" + entry.getValue());
             }
 
 
+            List<String> data = new ArrayList<>();
 
-        List<String> data = new ArrayList<>();
 
+            InputStream file = getResources().openRawResource(R.raw.data);
+            BufferedReader br = new BufferedReader(new InputStreamReader(file));
+            String line = "";
 
-        InputStream file = getResources().openRawResource(R.raw.data);
-        BufferedReader br = new BufferedReader(new InputStreamReader(file));
-        String line = "";
-
-        final List<Car> cars = new ArrayList<>();
-        int i = 0;
-        try {
-            for (Integer key: guesses.keySet()) {
-                //guesses.get(key);
-                while ((line = br.readLine()) != null) {
-                    if (key == i) {
-                        cars.add(new Car(line.split(",")));
-                        break;
+            final List<Car> cars = new ArrayList<>();
+            int i = 0;
+            try {
+                for (Integer key : guesses.keySet()) {
+                    //guesses.get(key);
+                    while ((line = br.readLine()) != null) {
+                        if (key == i) {
+                            cars.add(new Car(line.split(",")));
+                            break;
+                        }
+                        i++;
                     }
-                    i++;
                 }
+                br.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            br.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
 
-        List<Map<String, Object>> listems = new ArrayList<>();
-        for (Car car:cars) {
-            Map<String, Object> listem = new HashMap<>();
-            listem.put("make", car.getMake());
-            listem.put("model", car.getModel());
-            listems.add(listem);
-        }
-        SimpleAdapter simplead = new SimpleAdapter(this, listems,
-                R.layout.item, new String[] { "make", "model" },
-                new int[] {R.id.txtMake,R.id.txtModel});
-
-        listResult=findViewById(R.id.listResult);
-        listResult.setAdapter(simplead);
-        listResult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Car c = cars.get(position);
-
-                AlertDialog.Builder localBuilder = new AlertDialog.Builder(SearchViewResult.this);
-                localBuilder.setTitle( c.getMake() +" "+ c.getModel());
-                localBuilder.setIcon(R.mipmap.ic_launcher);
-                localBuilder.setMessage(c.toString());
-                localBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
-                {
-                    public void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
-                    {
-
-                    }
-                });
-
-                localBuilder.setCancelable(false).create();
-
-                localBuilder.show();
-
+            List<Map<String, Object>> listems = new ArrayList<>();
+            for (Car car : cars) {
+                Map<String, Object> listem = new HashMap<>();
+                listem.put("make", car.getMake());
+                listem.put("model", car.getModel());
+                listems.add(listem);
             }
-        });
+            SimpleAdapter simplead = new SimpleAdapter(this, listems,
+                    R.layout.item, new String[]{"make", "model"},
+                    new int[]{R.id.txtMake, R.id.txtModel});
+
+            listResult = findViewById(R.id.listResult);
+            listResult.setAdapter(simplead);
+            listResult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Car c = cars.get(position);
+
+                    AlertDialog.Builder localBuilder = new AlertDialog.Builder(SearchViewResult.this);
+                    localBuilder.setTitle(c.getMake() + " " + c.getModel());
+                    localBuilder.setIcon(R.mipmap.ic_launcher);
+                    localBuilder.setMessage(c.toString());
+                    localBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt) {
+
+                        }
+                    });
+
+                    localBuilder.setCancelable(false).create();
+
+                    localBuilder.show();
+
+                }
+            });
+        }
     }
 
     @Override
