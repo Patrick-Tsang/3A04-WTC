@@ -69,14 +69,18 @@ public class SearchViewResult extends AppCompatActivity {
         problem.put("doors_size", doors+","+size);
         se.setProblem(problem);
         se.updateModerator();
+
         se.search();
 
         Map<Integer, Double> guesses = se.getGuesses();
+        //TODO: Create text box that is only visible for null set
+//        if (guesses.entrySet() == null){
+//
+//        } else {
+            for (Map.Entry<Integer, Double> entry : guesses.entrySet()) {
+                System.out.println(entry.getKey() + "-" + entry.getValue());
+            }
 
-        for (Map.Entry<Integer, Double> entry : guesses.entrySet())
-        {
-            System.out.println(entry.getKey() + "-" + entry.getValue());
-        }
 
 
         List<String> data = new ArrayList<>();
